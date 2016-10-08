@@ -1,0 +1,30 @@
+---
+title: "AFEC-X 2016 data visulization using R"
+author: "Zhuangfang Yi"
+date: "October 7, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## A bit introduction 
+
+Hi all, Welcome to AFEC-X 2016 class in Xishuangbanna. This is Zhuangfang Yi; I was one of AFEC-X 2009 students. I met most amazing, bright and hardworking people in my class in 2009, who keep inspiring me academically and in my life onward.I still kept in touch most of them, and hope you all enjoy being with each other in the field course and also learned a lot new knowledge on ecology, conservation, and other fancy field design and modeling stuff from your different tutors and classmates.Take as much as you can.
+
+Before we start the classes, I need you guys to start install R and Rstudio. 
+
+## R and R studio installation
+To install R, please go to [this site](https://www.r-project.org/), and you could find Rstudio [here](https://www.rstudio.com/products/RStudio/), please install the free desktop version. 
+
+
+## What I wanna teach you:
+- About R, Rstudio,and study resource.
+- Data wrangling and visualization, using [Washington DC-bikeshare](https://rpubs.com/Geoyi/BikeshareDC_LM).
+- Interactive map and graphs, using [Quake dataset](https://geoyi.shinyapps.io/quakes3/).
+- Machine learning showcase, using [satalite image alignment](https://rpubs.com/Geoyi/TennisCourtAlgrithm).
+
+First 2 sections will be on day one and we will do the last 2 sections on the day two.
+
+##Let's get our hands dirty on data
