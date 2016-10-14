@@ -1,0 +1,89 @@
+---
+title: "Fiji earthquakes"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+runtime: shiny
+
+devtools::install_github(c(
+  "jcheng5/d3scatter",
+  "rstudio/leaflet@joe/feature/crosstalk-filter",
+  "rstudio/DT@joe/feature/crosstalk"
+))
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(crosstalk)
+library(dplyr)
+
+quakes$class <- factor(floor(quakes$mag), labels = c("Light", "Moderate", "Strong"))
+
+set.seed(10101)
+quakes <- quakes %>% sample_n(200)
+
+sd <- SharedData$new(quakes)
+```
+
+Inputs {.sidebar}
+-----------------------------------------------------------------------
+
+```{r}
+filter_slider("mag", "Magnitude", sd, ~mag, step = 0.1)
+filter_slider("depth", "Depth", sd, ~depth)
+```
+
+Row 1
+-----------------------------------------------------------------------
+
+### Map
+
+```{r}
+library(leaflet)
+pal <- colorFactor(c("#1f77bf", "#ff7f0e", "#2ca02c"), quakes$class)
+leaflet(sd) %>% addTiles() %>% addCircles(
+  radius = ~mag * 7000, weight = 1, fillOpacity = 0.8,
+  label = ~as.character(mag), color = ~pal(class)
+)
+```
+
+### Scatter
+
+```{r}
+library(d3scatter)
+d3scatter(sd, x = ~depth, y = ~stations, color = ~class)
+```
+
+### Histogram
+
+```{r}
+library(ggplot2)
+library(shiny)
+renderPlot({
+  
+  df <- sd$data(withSelection = TRUE, withFilter = TRUE)
+
+  ggplot(df, aes(x = mag, fill = selection_factor(df))) +
+    geom_histogram(binwidth = 0.2) +
+    scale_fill_selection("#444444", "skyblue1")
+  
+}, outputArgs = list(
+  brush = brushOpts("histBrush", direction = "x"))
+)
+
+maintain_selection(sd, "histBrush")
+```
+
+Row 2
+-----------------------------------------------------------------------
+
+### Table
+
+```{r}
+library(DT)
+datatable(sd, rownames = FALSE, extensions = 'Scroller', options = list(
+  scrollY = 200,
+  scroller = TRUE
+))
+```
