@@ -1,6 +1,6 @@
 ---
 title: "AFEC-X 2016 data visulization using R"
-author: "Zhuangfang Yi"
+author: "Zhuangfang Yi, Data Engineer and PhD in Ecological Economics" 
 date: "October 7, 2016"
 output: ioslides_presentation
 ---
@@ -22,9 +22,20 @@ To install R, please go to [this site](https://www.r-project.org/), and you coul
 ## What I wanna teach you:
 - About R, Rstudio,and study resource.
 - Data wrangling and visualization, using [Washington DC-bikeshare](https://rpubs.com/Geoyi/BikeshareDC_LM).
-- Interactive map and graphs, using [Quake dataset](https://geoyi.shinyapps.io/quakes3/).
+- Interactive map and graphs, using [Quake dataset to build web API](https://geoyi.shinyapps.io/quakes3/).
 - Machine learning showcase, using [satalite image alignment](https://rpubs.com/Geoyi/TennisCourtAlgrithm).
 
 First 2 sections will be on day one and we will do the last 2 sections on the day two.
 
-##Let's get our hands dirty on data
+
+## R study resources
+
+- [Getting start with R and RStudio](https://www.youtube.com/watch?v=lVKMsaWju8w);
+- [Getting start with R Markdown](https://vimeo.com/142172484);
+- Study R from beginer to advanced level @ [DataCamp](https://www.datacamp.com/courses);
+- [Data manipulation/wrangling with R and RStudio: Tidyr and Dplyr](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/);
+- R Data visualization with [ggplot2](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf), [plotly](https://plot.ly/r/), [Shiny](http://shiny.rstudio.com/).
+- Additional [statistics and probability study](https://www.khanacademy.org/math/statistics-probability/probability-library)
+- [A great TED data talk from Prof. Hans Rosling](https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen)
+
+ Note: some videos are from Youtube, you might need VPN to access them in China
