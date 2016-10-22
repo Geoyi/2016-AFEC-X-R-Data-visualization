@@ -4,7 +4,7 @@ author: "Zhuangfang Yi"
 date: "October 21, 2016"
 output: html_document
 ---
-
+If you wanna understand the dataset, pleas go to the data discription site: https://archive.ics.uci.edu/ml/datasets/Student+Performance
 ```{r setup, include=FALSE}
 setwd("C:/Users/Administrator/Desktop/2016-AFEC-X-R-Data-visualization-master/2016-AFEC-X-R-Data-visualization-master")
 list.files("C:/Users/Administrator/Desktop/2016-AFEC-X-R-Data-visualization-master/2016-AFEC-X-R-Data-visualization-master")
